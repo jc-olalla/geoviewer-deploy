@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  db:
+    build:
+      context: ./geoviewer-db
+    container_name: geoviewer_db
+    env_file: ./geoviewer-db/.env
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    networks:
+      - geonet
+
+  api:
+    build:
+      context: ./geoviewer-api
+    container_name: geoviewer_api
+    env_file: ./geoviewer-api/.env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    networks:
+      - geonet
+
+  frontend:
+    build:
+      context: ./geoviewer-app
+    container_name: geoviewer_app
+    ports:
+      - "5173:5173"
+    depends_on:
+      - api
+    networks:
+      - geonet
+
+volumes:
+  pg_data:
+
+networks:
+  geonet:
+
