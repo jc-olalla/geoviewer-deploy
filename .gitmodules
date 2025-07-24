@@ -1,12 +1,12 @@
 [submodule "geoviewer-db"]
-    path = geoviewer-db
-    url = https://github.com/jc-olalla/geoviewer-db
+	path = geoviewer-db
+	url = https://github.com/jc-olalla/geoviewer-db
 
 [submodule "geoviewer-api"]
-    path = geoviewer-api
-    url = https://github.com/jc-olalla/geoviewer-api
+	path = geoviewer-api
+	url = https://github.com/jc-olalla/geoviewer-api
 
 [submodule "geoviewer-app"]
-    path = geoviewer-app
-    url = https://github.com/jc-olalla/geoviewer-app
+	path = geoviewer-app
+	url = https://github.com/jc-olalla/geoviewer-app
 
